@@ -1,0 +1,30 @@
+leftmost
+Label the variables in the order they occur in Vars. This is the default.
+ff
+First fail. Label the leftmost variable with smallest domain next, in order to detect infeasibility early. This is often a good strategy.
+ffc
+Of the variables with smallest domains, the leftmost one participating in most constraints is labeled next.
+min
+Label the leftmost variable whose lower bound is the lowest next.
+max
+Label the leftmost variable whose upper bound is the highest next.
+The value order is one of:
+
+up
+Try the elements of the chosen variable's domain in ascending order. This is the default.
+down
+Try the domain elements in descending order.
+The branching strategy is one of:
+
+step
+For each variable X, a choice is made between X = V and X #\= V, where V is determined by the value ordering options. This is the default.
+enum
+For each variable X, a choice is made between X = V_1, X = V_2 etc., for all values V_i of the domain of X. The order is determined by the value ordering options.
+bisect
+For each variable X, a choice is made between X #=< M and X #> M, where M is the midpoint of the domain of X.
+At most one option of each category can be specified, and an option must not occur repeatedly.
+
+The order of solutions can be influenced with:
+
+min(Expr)
+max(Expr)
